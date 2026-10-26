@@ -41,10 +41,13 @@ module uart_rx #(
                 rx_meta <= 1'b1;
                 rx_sync <= 1'b1;
             end
-        end else begin
+         else begin
             rx_meta <= rx_pin;
             rx_sync <= rx_meta;
         end
+
+    end
+        
     
     // baud tick generator
 
