@@ -158,6 +158,10 @@ module uart_rx #(
                             data_ready <= 1;
                         end
                     end  
+
+                    default: begin
+                        state <= IDLE;
+                    end
                     
 
                 endcase
