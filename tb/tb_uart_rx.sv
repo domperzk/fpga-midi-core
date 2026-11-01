@@ -29,7 +29,21 @@ module tb_uart_rx;
         rst_n = 1;
 
         #100;
+
+        // glitch test
+        rx_pin = 0;
+        #2000;
+        rx_pin = 1;
+
+        #50000;
+        // back to back stress test
         send_byte(8'h3C);
+        send_byte(8'h90);
+        send_byte(8'h7F);
+        #100000
+        // alternating bit test
+        send_byte(8'h55);
+
         $finish;
     end
 
