@@ -35,7 +35,7 @@ Captures the raw input from the MIDI-to-TTL board.
 - **Synchronisation:** Uses a 2-flop synchroniser (`rx_meta`, `rx_sync`) to safely cross the asynchronous external signal into the 100MHz clock domain.
 - **Oversampling & Extraction:** Divides the 100MHz clock to generate a 16x oversampling tick for the 31,250 baud rate, packaging the serial bits into standard 8-bit bytes.
 
-![UART FSM](assets/fsm_diagram.png)
+![UART FSM](assets/uart_rx_fsm_diagram.png)
 
 ### 2. Protocol Parser (`src/midi_parser.sv`)
 Filters the data stream for standard 3-byte MIDI "Note On" messages (Status, Pitch, Velocity). The FSM uses three states (`IDLE`, `WAIT_NOTE`, `WAIT_VELOCITY`) to ignore irrelevant commands like pitch bends, trap the pitch byte, and generate a single-cycle `note_valid` pulse for the downstream mapper.
