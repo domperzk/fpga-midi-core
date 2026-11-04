@@ -9,7 +9,7 @@ A real-time MIDI-to-LED visualizer built for the Xilinx Arty A7. It reads a stan
 ## Repository Structure
 ```text
 ├── assets
-│   └── fsm_diagram.png      # State machine diagrams
+│   └── uart_rx_fsm_diagram.png      # State machine diagrams
 ├── constraints
 │   └── arty_a7.xdc          # Physical pin mappings
 ├── sim
